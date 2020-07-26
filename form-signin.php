@@ -1,8 +1,24 @@
 <?php
-session_start();
+$_SESSION['help'] = '';
+if(isset($_POST['submit'])=='signin'){
+    $conn = new mysqli('localhost', 'root', 'Giuseppe123.', 'bookentory');
 
- ?>
+    $username=$_POST['username'];
+    $password=$_POST['password'];
 
+    $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+
+    $result = mysqli_query($conn,$sql);
+
+    if(mysqli_num_rows($result)==0){
+        $_SESSION['help'] = "This combination of username and password does not work. Please try a different combination or register an account!";
+    }
+    else{
+        $_SESSION['help'] = "Welcome!";
+        header("location: user-page.php");
+    }
+}
+?>
 
 
 <!doctype html>
@@ -37,17 +53,16 @@ session_start();
     <link href="signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
-    <form class="form-signin">
 <form class="form-signin" method="POST">
+  <div class="mt-3 mb-3 text-center text-muted"><?= $_SESSION['help'] ?></div>
   <img class="mb-4" src="assets\images\book-icon.svg" alt="" width="112" height="112">
   <h1 class="h3 mb-4 font-weight-normal font-weight-bold">Sign in to your Bookentory!</h1>
   <label for="inputUsername" class="sr-only">Username</label>
-  <input type="text" id="inputUsername" class="form-control" placeholder="Username" required>
+  <input type="text" id="inputUsername" class="form-control" placeholder="Username" name="username" required>
   <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  <button class="mt-2 btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+  <button class="mt-2 btn btn-lg btn-primary btn-block" name="submit" type="submit" value="signin">Sign in</button>
   <button onclick="location.href='http://localhost/Databse-Project-TBD/Database-Project-TBD/form-register.php'" class="btn btn-lg btn-dark btn-block" type="submit">Register</button> </a>
-  <p class="mt-3 mb-3 text-center text-muted">*There is no hashing or protection being done here, so make sure not to use any real passwords.</p>
 </form>
 </body>
 </html>
