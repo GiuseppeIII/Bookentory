@@ -1,22 +1,23 @@
 <?php
-session_start();
-$_SESSION['response'] = '';
-$conn = new mysqli('localhost', 'root', 'Giuseppe123.', 'bookentory');
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-$sql = "INSERT INTO users(username, email, password)
-      VALUES ('John', 'Doe', 'john@example.com')";
+$_SESSION['help'] = '';
+if(isset($_POST['submit'])=='register'){
+    $conn = new mysqli('localhost', 'root', 'Giuseppe123.', 'bookentory');
 
-if($conn->query($sql) === true){
-  $_SESSION['response'] = 'username registered';
-}
-else{
-    $_SESSION['response'] = 'ERROR';
-}
+    $username=$_POST['username'];
+    $email=$_POST['email'];
+    $password=$_POST['password'];
 
-$conn->close();
- ?>
+    $sql = "INSERT INTO users(username, email, password)
+            VALUES ('$username', '$email', '$password')";
+
+    if(mysqli_query($conn, $sql)){
+        $_SESSION['help'] = "You are now registered as $username, please sign in!";
+    }
+    else{
+        $_SESSION['help'] = "An error occured, please try a different name.";
+    }
+}
+?>
 
 
 
@@ -52,8 +53,8 @@ $conn->close();
     <link href="signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
-<form class="form-signin">
-  <div class="mb-5 text-muted text-center"><?= $_SESSION['response'] ?></div>
+<form class="form-signin" method="POST">
+  <div class="mt-3 mb-3 text-center text-muted"><?= $_SESSION['help'] ?></div>
   <img class="mb-4" src="assets\images\book-icon.svg" alt="" width="112" height="112">
   <h1 class="h3 mb-4 font-weight-normal font-weight-bold">Register for Bookentory!</h1>
   <label for="inputEmail" class="sr-only">Email</label>
@@ -62,7 +63,7 @@ $conn->close();
   <input type="text" id="inputUsername" class="form-control" placeholder="Username" name="username" required>
   <label for="inputPassword" class="sr-only">Password</label>
   <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
-  <button class="mt-2 btn btn-lg btn-dark btn-block" type="submit">Register</button>
+  <button class="mt-2 btn btn-lg btn-dark btn-block" name="submit" type="submit" value="register">Register</button>
   <p class="mt-3 mb-3 text-center text-muted">*There is no hashing or protection being done here, so make sure not to use any real passwords.</p>
 </form>
 </body>
