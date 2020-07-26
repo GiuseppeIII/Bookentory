@@ -1,4 +1,5 @@
 <?php
+session_start();
 $_SESSION['help'] = '';
 if(isset($_POST['submit'])=='signin'){
     $conn = new mysqli('localhost', 'root', 'Giuseppe123.', 'bookentory');
@@ -15,6 +16,7 @@ if(isset($_POST['submit'])=='signin'){
     }
     else{
         $_SESSION['help'] = "Welcome!";
+        $_SESSION['username'] = $username;
         header("location: user-page.php");
     }
 }
@@ -62,7 +64,7 @@ if(isset($_POST['submit'])=='signin'){
   <label for="inputPassword" class="sr-only">Password</label>
   <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
   <button class="mt-2 btn btn-lg btn-primary btn-block" name="submit" type="submit" value="signin">Sign in</button>
-  <button onclick="location.href='http://localhost/Databse-Project-TBD/Database-Project-TBD/form-register.php'" class="btn btn-lg btn-dark btn-block" type="submit">Register</button> </a>
+  <button onclick="location.href='form-register.php'" class="btn btn-lg btn-dark btn-block" type="submit">Register</button>
 </form>
 </body>
 </html>

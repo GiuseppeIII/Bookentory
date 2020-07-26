@@ -2,14 +2,13 @@
 session_start();
 ?>
 
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title><?= $_SESSION['username'] ?> · Bookentory</title>
+    <title><?= $_SESSION['title'] ?> · Bookentory</title>
     <link rel="icon" type="image/svg+xml" href="assets\images\favicon.svg">
 
     <!-- Bootstrap core CSS -->
@@ -31,14 +30,21 @@ session_start();
         }
       }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-  </head>
-  <body class="text-center">
-<form class="form-signin" method="POST">
-  <img class="mb-4" src="assets\images\book-icon.svg" alt="" width="112" height="112">
-  <h1 class="h3 mb-4 font-weight-normal font-weight-bold">Hello <?= $_SESSION['username'] ?>!</h1>
-  <button onclick="location.href='booklist.php'" class="btn btn-lg btn-dark btn-block" type="button">View Books</button>
-</form>
-</body>
+<link href="booklist.css" rel="stylesheet">
+
+<button onclick="location.href='booklist.php'" class="btn btn-lg float-right btn-dark" type="button">Book List</button>
+
 </html>
+
+<?php
+$conn = new mysqli('localhost', 'root', 'Giuseppe123.', 'bookentory');
+$title=$_SESSION['title'];
+$sql = "SELECT * FROM books WHERE title='$title'";
+$result = mysqli_query($conn,$sql);
+if (mysqli_num_rows($result) > 0){
+        echo "<B> id | title | author | language | ISBN | Year Published <br></b>";
+    while($row = mysqli_fetch_assoc($result)) {
+        echo $row["id"]." | ".$row["title"]." | ".$row["author"]." | ".$row["language"]." | ".$row["ISBN"]." | ".$row["year_published"]."<br>";
+    }
+}
+?>
