@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+ ?>
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -34,10 +41,10 @@
   <img class="mb-4" src="assets\images\book-icon.svg" alt="" width="112" height="112">
   <h1 class="h3 mb-4 font-weight-normal font-weight-bold">Sign in to your Bookentory!</h1>
   <label for="inputUsername" class="sr-only">Username</label>
-  <input type="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+  <input type="text" id="inputUsername" class="form-control" placeholder="Username" required>
   <label for="inputPassword" class="sr-only">Password</label>
   <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <button class="mt-2 btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   <button class="btn btn-lg btn-dark btn-block" type="submit">Register</button>
   <p class="mt-3 mb-3 text-center text-muted">*There is no hashing or protection being done here, so make sure not to use any real passwords.</p>
 </form>
