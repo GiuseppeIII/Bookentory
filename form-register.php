@@ -64,7 +64,6 @@ if(isset($_POST['submit'])=='register'){
   <label for="inputPassword" class="sr-only">Password</label>
   <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
   <button class="mt-2 btn btn-lg btn-dark btn-block" name="submit" type="submit" value="register">Register</button>
-  <p class="mt-3 mb-3 text-center text-muted">*There is no hashing or protection being done here, so make sure not to use any real passwords.</p>
 </form>
 </body>
 </html>
