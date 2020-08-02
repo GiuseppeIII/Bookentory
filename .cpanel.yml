@@ -1,5 +1,5 @@
 ---
 deployment:
       tasks:
-        - export DEPLOYPATH=/home/bookentory/repositories/Database-Project-TBD
+        - export DEPLOYPATH=/home/bookentory/public_html
         - /bin cp * $DEPLOYPATH
