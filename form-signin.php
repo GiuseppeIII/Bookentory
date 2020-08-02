@@ -17,6 +17,8 @@ if(isset($_POST['submit'])=='signin'){
     else{
         $_SESSION['help'] = "Welcome!";
         $_SESSION['username'] = $username;
+        $sql2 = "SELECT idUsers FROM users WHERE username = '$username' AND password = '$password'";
+        $result = mysqli_query($conn,$sql2);
         header("location: user-page.php");
     }
 }

@@ -1,12 +1,14 @@
 <?php
+session_start();
 $_SESSION['help'] = '';
 if(isset($_POST['submit'])=='addbook'){
     $conn = new mysqli('localhost', 'root', 'Giuseppe123.', 'bookentory');
 
     $id=$_POST['id'];
+    $bookRating=$_POST['bookRating'];
 
     $sql = "INSERT INTO userlist(userId, booksId, bookRating)
-            VALUES ('$title', '$id', '$language', '$ISBN', $year_published)";
+            VALUES ('$title', '$id', $bookRating)";
 
     if(mysqli_query($conn, $sql)){
         $_SESSION['help'] = "$title has now been added!";
@@ -57,7 +59,20 @@ if(isset($_POST['submit'])=='addbook'){
   <h1 class="h3 mb-4 font-weight-normal font-weight-bold">Add Book</h1>
   <label for="inputId" class="sr-only">BookId</label>
   <input type="number" id="inputBookId" class="form-control" placeholder="ID" name="id" required>
-  <input type="range" id="inputRating" class="form-control" placeholder="Score" name="score" min="0" max="10" required>
+  <select name="bookRating" title="score" class="custom-select" required>
+      <option value="" selected hidden>Score</option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+  </select>
   <label for="inputId" class="sr-only">bookRating</label>
   <button class="mt-2 btn btn-lg btn-dark btn-block" name="submit" type="submit" value="addbook">Add Book</button>
   <button onclick="location.href='user-page.php'" class="btn btn-lg btn-primary btn-block" type="submit">User Page</button>
