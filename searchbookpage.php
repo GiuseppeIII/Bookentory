@@ -1,5 +1,9 @@
 <?php
 session_start();
+$conn = new mysqli('localhost', 'root', 'Giuseppe123.', 'bookentory');
+$title=$_SESSION['title'];
+$sql = "SELECT * FROM books WHERE title='$title'";
+$result = mysqli_query($conn,$sql);
 ?>
 
 <!doctype html>
@@ -33,18 +37,31 @@ session_start();
 <link href="booklist.css" rel="stylesheet">
 
 <button onclick="location.href='booklist.php'" class="btn btn-lg float-right btn-dark" type="button">Book List</button>
-
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">title</th>
+      <th scope="col">author</th>
+      <th scope="col">language</th>
+      <th scope="col">ISBN</th>
+      <th scope="col">Year Published</th>
+    </tr>
+  </thead>
+  <tbody>
+      <?php
+      if (mysqli_num_rows($result) > 0){
+          while($row = mysqli_fetch_assoc($result)) {?>
+              <tr>
+                <th scope = "row"> <?php echo $row["id"]?> </th>
+                <td><?php echo $row["title"]?></td>
+                <td><?php echo $row["author"]?></td>
+                <td><?php echo $row["language"]?></td>
+                <td><?php echo $row["ISBN"]?></td>
+                <td><?php echo $row["year_published"]?></td>
+        <?php }
+      }
+      ?>
+  </tbody>
+</table>
 </html>
-
-<?php
-$conn = new mysqli('localhost', 'root', 'Giuseppe123.', 'bookentory');
-$title=$_SESSION['title'];
-$sql = "SELECT * FROM books WHERE title='$title'";
-$result = mysqli_query($conn,$sql);
-if (mysqli_num_rows($result) > 0){
-        echo "<B> id | title | author | language | ISBN | Year Published <br></b>";
-    while($row = mysqli_fetch_assoc($result)) {
-        echo $row["id"]." | ".$row["title"]." | ".$row["author"]." | ".$row["language"]." | ".$row["ISBN"]." | ".$row["year_published"]."<br>";
-    }
-}
-?>
