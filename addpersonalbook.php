@@ -56,9 +56,9 @@ if(isset($_POST['submit'])=='addbook'){
   <img class="mb-4" src="assets\images\plus.svg" alt="" width="112" height="112">
   <h1 class="h3 mb-4 font-weight-normal font-weight-bold">Add Book</h1>
   <label for="inputId" class="sr-only">BookId</label>
-  <input type="ramge" id="inputRating" class="form-control" placeholder="Score" name="score" min="0" max="10" required>
-  <label for="inputId" class="sr-only">bookRating</label>
   <input type="number" id="inputBookId" class="form-control" placeholder="ID" name="id" required>
+  <input type="range" id="inputRating" class="form-control" placeholder="Score" name="score" min="0" max="10" required>
+  <label for="inputId" class="sr-only">bookRating</label>
   <button class="mt-2 btn btn-lg btn-dark btn-block" name="submit" type="submit" value="addbook">Add Book</button>
   <button onclick="location.href='user-page.php'" class="btn btn-lg btn-primary btn-block" type="submit">User Page</button>
 </form>
