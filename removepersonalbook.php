@@ -1,17 +1,15 @@
 <?php
 session_start();
 $_SESSION['help'] = '';
-if(isset($_POST['submit'])=='addbook'){
+if(isset($_POST['submit'])=='removebook'){
     $conn = new mysqli('localhost', 'root', 'Giuseppe123.', 'bookentory');
 
     $id=$_POST['id'];
-    $bookRating=$_POST['bookRating'];
     $idUser = $_SESSION['idUsers'];
-    $sql = "INSERT INTO userlist(userId, booksId, bookRating)
-            VALUES ($idUser, '$id', $bookRating)";
+    $sql = "DELETE FROM userlist WHERE booksId=$id AND userId=$idUser";
 
     if(mysqli_query($conn, $sql)){
-        $_SESSION['help'] = "Book $id has now been added!";
+        $_SESSION['help'] = "Book $id has now been removed!";
     }
     else{
         $_SESSION['help'] = "An error occured, please try a different book.";
@@ -27,7 +25,7 @@ if(isset($_POST['submit'])=='addbook'){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>Add Personal Book · Bookentory</title>
+    <title>Remove Personal Book · Bookentory</title>
     <link rel="icon" type="image/svg+xml" href="assets\images\favicon.svg">
 
     <!-- Bootstrap core CSS -->
@@ -55,26 +53,11 @@ if(isset($_POST['submit'])=='addbook'){
   <body class="text-center">
 <form class="form-signin" method="POST">
   <div class="mt-3 mb-3 text-center text-muted"><?= $_SESSION['help'] ?></div>
-  <img class="mb-4" src="assets\images\plus.svg" alt="" width="112" height="112">
-  <h1 class="h3 mb-4 font-weight-normal font-weight-bold">Add Book</h1>
-  <label for="inputId" class="sr-only">BookId</label>
-  <input type="number" id="inputBookId" class="form-control" placeholder="ID" name="id" required>
-  <select name="bookRating" title="score" class="custom-select" required>
-      <option value="" selected hidden>Score</option>
-      <option value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-  </select>
-  <label for="inputId" class="sr-only">bookRating</label>
-  <button class="mt-2 btn btn-lg btn-dark btn-block" name="submit" type="submit" value="addbook">Add Book</button>
+  <img src="assets\images\minus.svg" alt="" width="112" height="112">
+  <h1 class="h3 mb-4 font-weight-normal font-weight-bold">Remove Book</h1>
+  <label for="inputID" class="sr-only">ID</label>
+  <input type="number" id="inputID" class="form-control" placeholder="ID" name="id" required>
+  <button class="mt-2 btn btn-lg btn-dark btn-block" name="submit" type="submit" value="removebook">Remove Book</button>
   <button onclick="location.href='user-page.php'" class="btn btn-lg btn-primary btn-block" type="submit">User Page</button>
 </form>
 </body>

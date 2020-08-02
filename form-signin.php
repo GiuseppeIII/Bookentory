@@ -19,7 +19,8 @@ if(isset($_POST['submit'])=='signin'){
         $_SESSION['username'] = $username;
         $sql2 = "SELECT idUsers FROM users WHERE username = '$username' AND password = '$password'";
         $result = mysqli_query($conn,$sql2);
-        $idUsers = mysqli_fetch_object($result);
+        $idUsersSql = mysqli_fetch_row($result);
+        $idUsers=reset($idUsersSql);
         $_SESSION['idUsers'] = $idUsers;
         header("location: user-page.php");
     }
