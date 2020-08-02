@@ -1,21 +1,19 @@
 <?php
+session_start();
 $_SESSION['help'] = '';
 if(isset($_POST['submit'])=='modifybook'){
     $conn = new mysqli('localhost', 'root', 'Giuseppe123.', 'bookentory');
 
     $id=$_POST['id'];
-    $title=$_POST['title'];
-    $author=$_POST['author'];
-    $language=$_POST['language'];
-    $ISBN=$_POST['ISBN'];
-    $year_published=$_POST['year_published'];
+    $bookRating=$_POST['bookRating'];
+    $idUser = $_SESSION['idUsers'];
 
-    $sql = "UPDATE books
-            SET title='$title', author='$author', language='$language', ISBN='$ISBN', year_published=$year_published
-            WHERE id=$id";
+    $sql = "UPDATE userlist
+            SET bookRating='$bookRating'
+            WHERE booksId=$id AND userId=$idUser";
 
     if(mysqli_query($conn, $sql)){
-        $_SESSION['help'] = "You have succesfully modified $title!";
+        $_SESSION['help'] = "You have succesfully modified book $id!";
     }
     else{
         $_SESSION['help'] = "An error occured, please try a different book.";
@@ -60,7 +58,7 @@ if(isset($_POST['submit'])=='modifybook'){
 <form class="form-signin" method="POST">
   <div class="mt-3 mb-3 text-center text-muted"><?= $_SESSION['help'] ?></div>
   <img class="mb-4" src="assets\images\modifyicon.svg" alt="" width="112" height="112">
-  <h1 class="h3 mb-4 font-weight-normal font-weight-bold">Modify Book</h1>
+  <h1 class="h3 mb-4 font-weight-normal font-weight-bold">Change Book Score</h1>
   <label for="inputId" class="sr-only">BookId</label>
   <input type="number" id="inputBookId" class="form-control" placeholder="ID" name="id" required>
   <select name="bookRating" title="score" class="custom-select" required>
@@ -79,7 +77,7 @@ if(isset($_POST['submit'])=='modifybook'){
   </select>
   <label for="inputId" class="sr-only">bookRating</label>
   <button class="mt-2 btn btn-lg btn-dark btn-block" name="submit" type="submit" value="modifybook">Change Book Score</button>
-  <button onclick="location.href='booklist.php'" class="btn btn-lg btn-primary btn-block" type="submit">Book List</button>
+  <button onclick="location.href='user-page.php'" class="btn btn-lg btn-primary btn-block" type="submit">User Page</button>
 </form>
 </body>
 </html>
