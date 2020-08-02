@@ -2,4 +2,6 @@
 deployment:
       tasks:
         - export DEPLOYPATH=/home/bookentory/public_html
-        - /bin cp * $DEPLOYPATH
+        - /bin/cp index.html $DEPLOYPATH
+        - /bin/cp signin.css $DEPLOYPATH
+        - /bin/cp * $DEPLOYPATH
