@@ -41,13 +41,15 @@ session_start();
 
 $conn = new mysqli('localhost', 'root', 'Giuseppe123.', 'bookentory');
 $idUser = $_SESSION['idUsers'];
-$sql = "SELECT booksId FROM userlist WHERE userId = $idUser ORDER BY booksId";
+$sql = "SELECT id, title, author, language, ISBN, year_published
+        FROM books JOIN userlist ON books.id = userlist.booksId
+        WHERE userId = $idUser ORDER BY booksId";
 $result = mysqli_query($conn,$sql);
 
 if (mysqli_num_rows($result) > 0){
-        echo "<B> id <br></b>";
+        echo "<B> id | title | author | language | ISBN | Year Published <br></b>";
     while($row = mysqli_fetch_assoc($result)) {
-        echo $row["booksId"]."<br>";
+        echo $row["id"]." | ".$row["title"]." | ".$row["author"]." | ".$row["language"]." | ".$row["ISBN"]." | ".$row["year_published"]."<br>";
     }
 }
 ?>
