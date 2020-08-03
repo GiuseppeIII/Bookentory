@@ -58,7 +58,7 @@ if(isset($_POST['submit'])=='addbook'){
       </head>
     <body>
     <nav class="navbar navbar-custom fixed-top navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href='homepage.php'>
+            <a class="navbar-brand" href='user-page.php'>
             <img src="assets\images\book-icon.svg" width="30" height="30" alt="">
         </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
