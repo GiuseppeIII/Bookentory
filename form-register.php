@@ -12,6 +12,7 @@ if(isset($_POST['submit'])=='register'){
 
     if(mysqli_query($conn, $sql)){
         $_SESSION['help'] = "You are now registered as $username, please sign in!";
+        header("location: form-signin.php");
     }
     else{
         $_SESSION['help'] = "An error occured, please try a different name.";
