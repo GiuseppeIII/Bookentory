@@ -29,7 +29,7 @@ if(isset($_POST['submit'])=='modifybook'){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>Modify Book · Bookentory</title>
+    <title>Change Score · Bookentory</title>
     <link rel="icon" type="image/svg+xml" href="assets\images\favicon.svg">
 
     <!-- Bootstrap core CSS -->

@@ -16,7 +16,7 @@ $result = mysqli_query($conn,$sql);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>Book List · Bookentory</title>
+    <title><?= $_SESSION['username'] ?>'s · Bookentory</title>
     <link rel="icon" type="image/svg+xml" href="assets\images\favicon.svg">
 
     <!-- Bootstrap core CSS -->
