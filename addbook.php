@@ -78,7 +78,6 @@ if(isset($_POST['submit'])=='addbook'){
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href='searchbook.php'>Search Books</a>
-              <a class="dropdown-item" href='addbook.php'>Add Book</a>
               <a class="dropdown-item" href='removebook.php'>Remove Book</a>
               <a class="dropdown-item" href='modifybook.php'>Modify Book</a>
             </div>

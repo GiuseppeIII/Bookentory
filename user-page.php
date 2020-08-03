@@ -47,9 +47,6 @@ session_start();
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item active">
-                <a class="nav-link" href='user-page.php'>User Page <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
                 <a class="nav-link" href='booklist.php'>All Books <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item dropdown active">

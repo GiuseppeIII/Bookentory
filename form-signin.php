@@ -72,9 +72,6 @@ if(isset($_POST['submit'])=='signin'){
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item active">
-                <a class="nav-link" href='form-signin.php'>Sign In <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
                 <a class="nav-link" href='form-register.php'>Register <span class="sr-only">(current)</span></a>
               </li>
             </ul>

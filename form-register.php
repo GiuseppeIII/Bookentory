@@ -67,9 +67,6 @@ if(isset($_POST['submit'])=='register'){
               <li class="nav-item active">
                 <a class="nav-link" href='form-signin.php'>Sign In <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href='form-register.php'>Register <span class="sr-only">(current)</span></a>
-              </li>
             </ul>
           </div>
         </nav>

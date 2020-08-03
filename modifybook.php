@@ -82,7 +82,6 @@ if(isset($_POST['submit'])=='modifybook'){
                   <a class="dropdown-item" href='searchbook.php'>Search Books</a>
                   <a class="dropdown-item" href='addbook.php'>Add Book</a>
                   <a class="dropdown-item" href='removebook.php'>Remove Book</a>
-                  <a class="dropdown-item" href='modifybook.php'>Modify Book</a>
                 </div>
               </li>
               <li class="nav-item dropdown active">

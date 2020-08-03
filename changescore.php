@@ -91,7 +91,6 @@ if(isset($_POST['submit'])=='modifybook'){
                   <a class="dropdown-item" href='seepersonallist.php'>Personal Book List</a>
                   <a class="dropdown-item" href='addpersonalbook.php'>Add Personal Book</a>
                   <a class="dropdown-item" href='removepersonalbook.php'>Remove Personal Book</a>
-                  <a class="dropdown-item" href='changescore.php'>Change Score</a>
                 </div>
               </li>
             </ul>

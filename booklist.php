@@ -32,9 +32,6 @@ $result = mysqli_query($conn,$sql);
               <li class="nav-item active">
                 <a class="nav-link" href='user-page.php'>User Page <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href='booklist.php'>All Books <span class="sr-only">(current)</span></a>
-              </li>
               <li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Database
