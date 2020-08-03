@@ -51,7 +51,50 @@ if(isset($_POST['submit'])=='addbook'){
     </style>
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
-  </head>
+    <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="booklist.css" rel="stylesheet">
+      </head>
+    <body>
+        <nav class="navbar navbar-custom fixed-top navbar-expand-lg navbar-light">
+          <a class="navbar-brand">
+              <img src="assets\images\book-icon.svg" width="30" height="30" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href='user-page.php'>User Page <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href='booklist.php'>All Books <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Database
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href='searchbook.php'>Search Books</a>
+                  <a class="dropdown-item" href='addbook.php'>Add Book</a>
+                  <a class="dropdown-item" href='removebook.php'>Remove Book</a>
+                  <a class="dropdown-item" href='modifybook.php'>Modify Book</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  My List
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href='seepersonallist.php'>Personal Book List</a>
+                  <a class="dropdown-item" href='addpersonalbook.php'>Add Personal Book</a>
+                  <a class="dropdown-item" href='removepersonalbook.php'>Remove Personal Book</a>
+                  <a class="dropdown-item" href='changescore.php'>Change Score</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
   <body class="text-center">
 <form class="form-signin" method="POST">
   <div class="mt-3 mb-3 text-center text-muted"><?= $_SESSION['help'] ?></div>
@@ -75,7 +118,8 @@ if(isset($_POST['submit'])=='addbook'){
   </select>
   <label for="inputId" class="sr-only">bookRating</label>
   <button class="mt-2 btn btn-lg btn-dark btn-block" name="submit" type="submit" value="addbook">Add Personal Book</button>
-  <button onclick="location.href='user-page.php'" class="btn btn-lg btn-primary btn-block" type="submit">User Page</button>
 </form>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>

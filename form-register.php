@@ -67,4 +67,6 @@ if(isset($_POST['submit'])=='register'){
   <p class="mt-3 mb-3 text-center text-muted">*There is no hashing or protection being done here, so make sure not to use any real passwords.</p>
 </form>
 </body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/dist/js/bootstrap.bundle.js"></script>
 </html>

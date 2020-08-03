@@ -2,6 +2,38 @@ html,
 
 body {
   background-color: #DBCBAD;
-
+  padding-top: 29px;
+  padding-bottom: -20px;
 }
-.navbar {margin-bottom: 1000;}
+
+thead>tr>th {
+    background-color: #5C5240;
+    color: #FFFFFF;
+}
+
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th,
+.table>tbody>tr>td,
+.table>tbody>tr>th {
+  border: 0
+}
+
+.table>tbody>tr:nth-child(odd)>td,
+.table>tbody>tr:nth-child(odd)>th {
+   background-color: #DBCBAD;
+ }
+
+ .table>tbody>tr:nth-child(even)>td,
+ .table>tbody>tr:nth-child(even)>th {
+    background-color: #D0C5B1;
+  }
+
+ .navbar-custom {
+    background-color: #E8E4DB;
+}
+
+  .navbar-nav>li>.dropdown-menu {
+       background-color: #E8E4DB;
+ }
