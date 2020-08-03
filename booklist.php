@@ -65,10 +65,10 @@ $result = mysqli_query($conn,$sql);
 <table class="table">
   <thead white-text>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">title</th>
-      <th scope="col">author</th>
-      <th scope="col">language</th>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Language</th>
       <th scope="col">ISBN</th>
       <th scope="col">Year Published</th>
     </tr>
