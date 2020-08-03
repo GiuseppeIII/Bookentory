@@ -58,7 +58,28 @@ if(isset($_POST['submit'])=='signin'){
     </style>
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
-  </head>
+    <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="booklist.css" rel="stylesheet">
+      </head>
+    <body>
+        <nav class="navbar navbar-custom fixed-top navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href='Homepage.php'>
+              <img src="assets\images\book-icon.svg" width="30" height="30" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href='form-signin.php'>Sign In <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href='form-register.php'>Register <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
   <body class="text-center">
 <form class="form-signin" method="POST">
   <div class="mt-3 mb-3 text-center text-muted"><?= $_SESSION['help'] ?></div>
