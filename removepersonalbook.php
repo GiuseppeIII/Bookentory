@@ -89,6 +89,7 @@ if(isset($_POST['submit'])=='removebook'){
               <a class="dropdown-item" href='changescore.php'>Modify Book</a>
             </div>
           </li>
+          <a class="nav-link" href='recommendations.php'>Recommendations <span class="sr-only">(current)</span></a>
         </ul>
       </div>
     </nav>

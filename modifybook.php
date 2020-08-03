@@ -95,6 +95,7 @@ if(isset($_POST['submit'])=='modifybook'){
                   <a class="dropdown-item" href='changescore.php'>Change Score</a>
                 </div>
               </li>
+              <a class="nav-link" href='recommendations.php'>Recommendations <span class="sr-only">(current)</span></a>
             </ul>
           </div>
         </nav>
