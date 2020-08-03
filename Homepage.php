@@ -33,7 +33,7 @@
       </head>
     <body>
         <nav class="navbar navbar-custom fixed-top navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href='Homepage.php'>
+          <a class="navbar-brand" href='homepage.php'>
               <img src="assets\images\book-icon.svg" width="30" height="30" alt="">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,9 +51,10 @@
           </div>
         </nav>
   <body class="text-center">
-<form class="form-signin" method="POST">
-  <img class="mb-4" src="assets\images\book-icon.svg" alt="" width="112" height="112">
-</form>
+  <div class="text-center mx-auto">
+    <img src="assets\images\book-icon.svg" alt="" width="150" height="150">
+     <h1 class="display-2 text-center">Bookentory </h1>
+  </form>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/dist/js/bootstrap.bundle.js"></script>
 </body>
