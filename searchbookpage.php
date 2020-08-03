@@ -2,7 +2,7 @@
 session_start();
 $conn = new mysqli('localhost', 'root', 'Giuseppe123.', 'bookentory');
 $title=$_SESSION['title'];
-$sql = "SELECT * FROM books WHERE title='$title'";
+$sql = "SELECT * FROM books WHERE title LIKE '%$title%'";
 $result = mysqli_query($conn,$sql);
 ?>
 

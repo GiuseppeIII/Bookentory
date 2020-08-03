@@ -6,11 +6,11 @@ if(isset($_POST['submit'])=='searchbook'){
 
     $title=$_POST['title'];
 
-    $sql = "SELECT * FROM books WHERE title = '$title'";
+    $sql = "SELECT * FROM books WHERE title LIKE '%$title%'";
 
     $result = mysqli_query($conn,$sql);
 
-    if(mysqli_num_rows($result)==0){
+     if(mysqli_num_rows($result)==0){
         $_SESSION['help'] = "This book could not be found. Try another book.";
     }
     else{
@@ -18,9 +18,9 @@ if(isset($_POST['submit'])=='searchbook'){
         $_SESSION['title'] = $title;
         header("location: searchbookpage.php");
     }
+
 }
 ?>
-
 
 
 <!doctype html>
